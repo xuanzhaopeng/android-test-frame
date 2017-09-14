@@ -13,6 +13,6 @@
     platform: 'android'
     browserName: 'android'
     deviceName: 'null'
-    automationName: Appium
+    automationName: UiAutomator2
     newCommandTimeout: 1200
     marionette: false

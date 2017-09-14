@@ -4,7 +4,7 @@
 ### Development
 > You need to have basic knowledge of Appium and its configuration
 
-> It only works from Android 5.0, otherwise you need to switch to use appium-selendroid instead of appium-android
+> It only works from Android 5.0, otherwise you need to switch to use appium-selendroid instead of appium-uiautomator2
 
 Basic
 ```bash

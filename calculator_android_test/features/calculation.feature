@@ -110,7 +110,7 @@ Feature: Calculation
       | t1  | 2    | 4    | 6          | -2         | 0.5        | 8          |
       | t2  | 4    | 2    | 6          | 2          | 2          | 8          |
 
-  @regression @C000006
+  @regression @C000006 @torun
   Scenario: I could change arguments during calculation
     Given I see main activity page
     When I type 1 to first argument
