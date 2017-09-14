@@ -4,8 +4,8 @@ class MainActivityPage < BasePage
   ARG2_LOCATOR = "@content-desc='arg2'"
   RESULT_LOCATOR = "@content-desc='result'"
 
-  FIRST_ARGUMENT = "//*[#{ARG1_LOCATOR} and @text='First argument']"
-  SECOND_ARGUMENT = "//*[#{ARG2_LOCATOR} and @text='Second argument']"
+  FIRST_ARGUMENT = "//*[#{ARG1_LOCATOR}]"
+  SECOND_ARGUMENT = "//*[#{ARG2_LOCATOR}]"
   RESULT = "//*[#{RESULT_LOCATOR} and @text='Result']"
   ADD_BUTTON = "//*[@content-desc='addition']"
   SUB_BUTTON = "//*[@content-desc='subtraction']"

@@ -4,6 +4,8 @@
 ### Development
 > You need to have basic knowledge of Appium and its configuration
 
+> It only works from Android 5.0, otherwise you need to switch to use appium-selendroid instead of appium-android
+
 Basic
 ```bash
 #Homebrew
@@ -39,7 +41,7 @@ As the bug of Appium(appium-adb), https://github.com/appium/appium/issues/7961, 
 
 Install Appium(at least 1.6.4) on Mac OS X
 ```bash
-brew install carthage
+brew install carthage # For iOS test
 npm install appium
 npm install appium-doctor
 
@@ -61,7 +63,7 @@ Run Test from CMD
 
 cd <project root>/calculator_android_test/
 bundle install
-ruby -- /usr/bin/cucumber _2.4.0_ /<Ur path>/android-test-frame/calculator_android_test/features --format Teamcity::Cucumber::Formatter --expand --tags @torun --verbose --color -r features
+cucumber _2.4.0_ /Users/robin/RubymineProjects/android-test-frame/calculator_android_test/features --format pretty --format html --out report.html --tags @regression --verbose --color -r features
 ```
 
 ### Issues

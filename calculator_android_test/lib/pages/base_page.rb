@@ -2,11 +2,19 @@ class BasePage
   DEFAULT_TIMEOUT = DemoCommonLib::TimeDelta.seconds(5)
   DEFAULT_WAIT_INTERVAL = DemoCommonLib::TimeDelta.seconds(1)
 
-  def type(value, xpath_name, *xpath_params)
+  attr_accessor :clear_text, :not_clear_text
+  @clear_text = true
+  @not_clear_text = false
+
+  def type(clear_text, value, xpath_name, *xpath_params)
     str = locator_eval(xpath_name)
     xpath = str % xpath_params
     DemoCommonLib::WaitHelper.wait {
-      $driver.find_element(:xpath, xpath).click
+      el = $driver.find_element(:xpath, xpath)
+      if clear_text
+        el.clear
+      end
+      el.click
       `adb shell input text #{value}`
     }
   end

@@ -16,8 +16,11 @@ $global_config[:driver][:caps]['app'] = ENV['test_app'].nil? ? DEFAULT_APK : ENV
 $global_config[:driver][:caps]['appPackage'] = ENV['test_app_package'].nil? ? DEFAULT_APP_PACKAGE : ENV['test_app_package']
 $global_config[:driver][:caps]['appActivity'] = ENV['test_app_activity'].nil? ? DEFAULT_APP_ACTIVITY : ENV['test_app_activity']
 
-$remote_server = DemoCommonLib::DemoServer.new $global_config
-$remote_server.restart
+# Start local appium server only if remote_url is not defined in config
+if $global_config[:server][:remote_url].nil?
+  $remote_server = DemoCommonLib::DemoServer.new $global_config
+  $remote_server.restart
+end
 
 at_exit do
   if $driver != nil

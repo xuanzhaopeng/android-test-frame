@@ -13,7 +13,7 @@ Before do |scenario|
   DemoCommonLib::Logger.info '--------------------------------------------------------------------------------------'
   DemoCommonLib::Logger.info "Scenario : #{scenario.name}"
   DemoCommonLib::Logger.info '--------------------------------------------------------------------------------------'
-  $global_driver = DemoCommonLib::DemoDriver.new($global_config, nil)
+  $global_driver = DemoCommonLib::DemoDriver.new($global_config)
   $driver = $global_driver.start_driver
 end
 
