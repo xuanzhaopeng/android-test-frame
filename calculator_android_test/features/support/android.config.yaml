@@ -1,0 +1,18 @@
+:server:
+  :type: :appium
+  :appium_path: /usr/local/bin/appium
+  :appium_log_path: /usr/local/var/log
+  :node_path: /usr/local/bin/node
+  :host: 127.0.0.1
+  :port: 4723
+  :selendroid_port: 4444
+  :start_timeout: 30
+:driver:
+  :caps:
+    platformName: 'android'
+    platform: 'android'
+    browserName: 'android'
+    deviceName: 'null'
+    automationName: Appium
+    newCommandTimeout: 1200
+    marionette: false

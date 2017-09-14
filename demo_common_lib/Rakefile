@@ -1,0 +1,55 @@
+# ruby_lib Rakefile
+require 'rubygems'
+require 'rake'
+
+# Defines gem name.
+def repo_name
+  'demo_common_lib'
+end
+
+
+# the name as used on github.com
+def version_file
+  'lib/common/version.rb'
+end
+
+def version_rgx
+  /\s*VERSION\s*=\s*'([^']+)'/m
+end
+
+def version
+  @version = @version || File.read(version_file).match(version_rgx)[1]
+end
+
+def gem_build
+  sh "gem build #{repo_name}.gemspec"
+end
+
+desc 'Build a new gem'
+task :gem do
+  gem_build
+end
+
+desc 'Build a new gem (same as gem task)'
+task :build => :gem do
+end
+
+desc 'Uninstall gem'
+task :uninstall do
+  cmd = "gem uninstall -aIx #{repo_name}"
+  # rescue on gem not installed error.
+  begin
+    sh "#{cmd}"
+  rescue
+  end
+end
+
+desc 'Install gem'
+task :install => [:gem, :uninstall] do
+  sh "gem install --no-rdoc --no-ri --local #{repo_name}-#{version}.gem --source http://rubygems.org"
+end
+
+desc 'Deploy gem'
+task :deploy => [:gem] do
+  raise 'Not implemented by this demo'
+end
