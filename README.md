@@ -61,9 +61,9 @@ Run Test from CMD
 ```bash
 # Only connect 1 android device or 1 emulator
 
-cd <project root>/calculator_android_test/
+cd <Project root>/calculator_android_test/
 bundle install
-cucumber _2.4.0_ /Users/robin/RubymineProjects/android-test-frame/calculator_android_test/features --format pretty --format html --out report.html --tags @regression --verbose --color -r features
+cucumber _2.4.0_ /<Project Root>/calculator_android_test/features --format pretty --format html --out report.html --tags @regression --verbose --color -r features
 ```
 
 ### Issues
