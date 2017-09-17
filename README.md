@@ -41,6 +41,7 @@ As the bug of Appium(appium-adb), https://github.com/appium/appium/issues/7961, 
 
 Install Appium(at least 1.6.4) on Mac OS X
 ```bash
+cd ~
 brew install carthage # For iOS test
 npm install appium
 npm install appium-doctor
@@ -58,6 +59,7 @@ rake install
 ```
 
 Run Test from CMD
+> You DO NOT need to start your local appium server manually!
 ```bash
 # Only connect 1 android device or 1 emulator
 
